@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>SMART on FHIR Auth Page</title>
+  </head>
+  <body>
+  <h2>Auth</h2>
+
+  <br>
+  URL: <a href="{{ url }}">{{ url }}</a>
+  <br>
+  {% include 'query_params.html' %}
+  <br>
+  {% include 'debug_info.html' %}
+
+  <br>
+  Requests Info:
+  {% include 'requests_info.html' %}
+
+  <br>
+  <h2>Payload</h2>
+  {{ patient |safe }}
+  </body>
+
+</html>

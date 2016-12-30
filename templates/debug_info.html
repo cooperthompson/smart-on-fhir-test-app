@@ -1,0 +1,20 @@
+  {% if debug_info %}
+  <table border="1">
+      <tr>
+          <th>Parameter</th>
+          <th>Parameter Value</th>
+      </tr>
+      {% for key, value in debug_info.items %}
+          <tr>
+          {% if key == 'client_id' %}
+              <td>{{ key }}</td>
+              <td><a href="{{ debug_info.zephyr_url }}">{{ value }}</a></td>
+          {% elif key == 'zephyr_url' %}
+          {% else %}
+          <td>{{ key }}</td>
+          <td>{{ value }}</td>
+          {% endif %}
+          </tr>
+      {% endfor %}
+  </table>
+  {% endif %}

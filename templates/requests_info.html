@@ -1,0 +1,23 @@
+{% if requests_info %}
+    <h3>Response History</h3>
+    <table border="1">
+      <tr>
+          <th>Parameter</th>
+          <th>Parameter Value</th>
+      </tr>
+      {% for response in requests_info.history %}
+          <tr>
+          <td>
+              {{ response.status_code }}
+          </td>
+          <td>
+              {{ response.url }}
+          </td>
+          <td>
+              {{ response.text | safe}}
+          </td>
+          </tr>
+      {% endfor %}
+    </table>
+    {{ requests_info.request.text | safe }}
+{% endif %}
